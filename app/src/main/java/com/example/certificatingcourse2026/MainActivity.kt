@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -77,8 +79,9 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
             )
 
         }
+        Spacer(modifier = Modifier.height(40.dp))
         Text(
-            text = "\n \n This certificate is presented to:",
+            text = "This certificate is presented to:",
             fontSize = 12.sp,
             textAlign = TextAlign.Center,
             modifier = modifier
@@ -105,13 +108,15 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
                     .fillMaxWidth()
             )
         }
+        Spacer(modifier = Modifier.height(20.dp))
         Text(
-            text = "\n has completed a $number hours course on \n",
+            text = " has completed a $number hours course on ",
             fontSize = 12.sp,
             textAlign = TextAlign.Center,
             modifier = modifier
                 .fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = course,
             fontSize = 25.sp,
@@ -120,6 +125,7 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
             modifier = modifier
                 .fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(20.dp))
         Row(
             modifier = modifier
                 .fillMaxWidth(),
