@@ -8,9 +8,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,12 +45,45 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
+    val course = "Android\n"
+    val number = 2
     Column(
         modifier = modifier
             .fillMaxSize()
             .padding(10.dp),
             verticalArrangement = Arrangement.Center
     ) {
+        Row(
+            modifier = modifier
+                .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround,
+                verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.unam),
+                contentDescription = null,
+                modifier = modifier.size(50.dp,50.dp),
+            )
+            Text(
+                text = "Facultad de Ingeniería\nUNAM",
+                fontSize = 15.sp,
+                textAlign = TextAlign.Center,
+                modifier = modifier
+            )
+            Image(
+                painter = painterResource(id = R.drawable.fiunam),
+                contentDescription = null,
+                modifier = modifier.size(50.dp,50.dp),
+            )
+
+        }
+        Text(
+            text = "\n \n This certificate is presented to:",
+            fontSize = 12.sp,
+            textAlign = TextAlign.Center,
+            modifier = modifier
+                .fillMaxWidth()
+        )
         Box(
             contentAlignment = Alignment.Center,
             modifier = modifier.fillMaxWidth()
@@ -57,7 +92,8 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(id = R.drawable.android),
                 contentDescription = null,
-                modifier = modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .size(150.dp),
                 alpha = 0.3F
             )
             Text(
@@ -69,14 +105,76 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
                     .fillMaxWidth()
             )
         }
-    Text(
-        text = "ha completado de manera exitosa dos horas de curso",
-        fontSize = 10.sp,
-        textAlign = TextAlign.Center,
-        modifier = modifier
-            .fillMaxWidth()
-    )
-}
+        Text(
+            text = "\n has completed a $number hours course on \n",
+            fontSize = 12.sp,
+            textAlign = TextAlign.Center,
+            modifier = modifier
+                .fillMaxWidth()
+        )
+        Text(
+            text = course,
+            fontSize = 25.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            modifier = modifier
+                .fillMaxWidth()
+        )
+        Row(
+            modifier = modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(
+                modifier = modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.momo),
+                    contentDescription = null,
+                    modifier = modifier.size(90.dp, 90.dp),
+                )
+                Text(
+                    text = "Nora Pedraza",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = modifier
+                )
+                Text(
+                    text = "Representatives",
+                    fontSize = 15.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = modifier
+                )
+            }
+            Column(
+                modifier = modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.hoshi),
+                    contentDescription = null,
+                    modifier = modifier.size(100.dp, 90.dp),
+                )
+                Text(
+                    text = "Leo Flores",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = modifier
+                )
+                Text(
+                    text = "Representatives",
+                    fontSize = 15.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = modifier
+                )
+            }
+        }
+
+
+    }
 }
 
 @Preview(showBackground = true)
